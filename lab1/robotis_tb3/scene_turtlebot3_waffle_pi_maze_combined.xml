@@ -1,0 +1,270 @@
+<mujoco model="TB3-WafflePi scene">
+  <include file="turtlebot3_waffle_pi.xml"/>
+
+  <statistic center="0.3 0 0.4" extent="1"/>
+
+  <visual>
+    <headlight diffuse="0.5 0.5 0.5" ambient="0.3 0.3 0.3" specular="0 0 0"/>
+    <rgba haze="0.15 0.25 0.35 1"/>
+    <global azimuth="0" elevation="0"/>
+  </visual>
+
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072"/>
+    <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.2 0.3 0.4" rgb2="0.1 0.2 0.3" markrgb="0.8 0.8 0.8" width="500" height="500"/>
+    <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5" reflectance="0.2"/>
+  </asset>
+  <worldbody>
+    <light pos="0.000 0.000 6.500" dir="0 0 -1"/>
+    <light pos="0.325 3.250 6.500" dir="0 0 -1"/>
+    <light pos="6.825 3.250 6.500" dir="0 0 -1"/>
+    <light pos="0.325 -3.250 6.500" dir="0 0 -1"/>
+    <light pos="6.825 -3.250 6.500" dir="0 0 -1"/>
+    <light pos="3.575 0.000 6.500" dir="0 0 -1"/>
+    <geom name="floor" type="plane" size="7.507500000000001 7.507500000000001 0.1" material="groundplane"/>
+    <geom name="maze_wall_0" type="box" pos="0.325 2.925 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_1" type="box" pos="0.325 1.625 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_2" type="box" pos="0.325 0.975 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_3" type="box" pos="0.325 0.325 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_4" type="box" pos="0.325 -0.325 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_5" type="box" pos="0.325 -0.975 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_6" type="box" pos="0.325 -1.625 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_7" type="box" pos="0.325 -2.275 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_8" type="box" pos="0.325 -2.925 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_9" type="box" pos="0.975 2.925 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_10" type="box" pos="0.975 1.625 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_11" type="box" pos="0.975 0.975 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_12" type="box" pos="0.975 -0.975 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_13" type="box" pos="0.975 -1.625 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_14" type="box" pos="0.975 -2.925 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_15" type="box" pos="1.625 2.275 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_16" type="box" pos="1.625 1.625 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_17" type="box" pos="1.625 0.325 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_18" type="box" pos="1.625 -0.325 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_19" type="box" pos="1.625 -1.625 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_20" type="box" pos="1.625 -2.275 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_21" type="box" pos="1.625 -2.925 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_22" type="box" pos="2.275 2.275 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_23" type="box" pos="2.275 1.625 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_24" type="box" pos="2.275 0.975 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_25" type="box" pos="2.275 0.325 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_26" type="box" pos="2.275 -0.975 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_27" type="box" pos="2.275 -2.275 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_28" type="box" pos="2.925 1.625 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_29" type="box" pos="2.925 0.325 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_30" type="box" pos="2.925 -0.975 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_31" type="box" pos="2.925 -2.275 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_32" type="box" pos="2.925 -2.925 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_33" type="box" pos="3.575 2.925 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_34" type="box" pos="3.575 2.275 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_35" type="box" pos="3.575 1.625 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_36" type="box" pos="3.575 0.975 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_37" type="box" pos="3.575 0.325 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_38" type="box" pos="3.575 -0.325 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_39" type="box" pos="3.575 -1.625 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_40" type="box" pos="4.225 2.925 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_41" type="box" pos="4.225 2.275 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_42" type="box" pos="4.225 1.625 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_43" type="box" pos="4.225 0.975 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_44" type="box" pos="4.225 -1.625 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_45" type="box" pos="4.225 -2.925 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_46" type="box" pos="4.875 2.275 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_47" type="box" pos="4.875 1.625 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_48" type="box" pos="4.875 0.975 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_49" type="box" pos="4.875 -0.325 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_50" type="box" pos="4.875 -0.975 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_51" type="box" pos="4.875 -1.625 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_52" type="box" pos="4.875 -2.925 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_53" type="box" pos="5.525 2.925 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_54" type="box" pos="5.525 2.275 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_55" type="box" pos="5.525 1.625 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_56" type="box" pos="5.525 0.325 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_57" type="box" pos="5.525 -0.325 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_58" type="box" pos="5.525 -1.625 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_59" type="box" pos="5.525 -2.275 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_60" type="box" pos="6.175 2.925 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_61" type="box" pos="6.175 1.625 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_62" type="box" pos="6.175 0.325 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_63" type="box" pos="6.175 -0.325 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_64" type="box" pos="6.175 -0.975 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_65" type="box" pos="6.175 -2.275 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_66" type="box" pos="6.825 2.925 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_67" type="box" pos="6.825 2.275 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_68" type="box" pos="6.825 0.975 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_69" type="box" pos="6.825 0.325 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_70" type="box" pos="6.825 -0.325 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_71" type="box" pos="6.825 -0.975 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_72" type="box" pos="6.825 -1.625 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_73" type="box" pos="6.825 -2.275 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_74" type="box" pos="6.825 -2.925 0.100" size="0.025 0.350 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_75" type="box" pos="0.650 3.250 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_76" type="box" pos="0.650 0.000 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_77" type="box" pos="0.650 -1.300 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_78" type="box" pos="0.650 -3.250 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_79" type="box" pos="1.300 3.250 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_80" type="box" pos="1.300 2.600 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_81" type="box" pos="1.300 1.950 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_82" type="box" pos="1.300 0.650 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_83" type="box" pos="1.300 -3.250 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_84" type="box" pos="1.950 3.250 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_85" type="box" pos="1.950 2.600 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_86" type="box" pos="1.950 -1.300 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_87" type="box" pos="1.950 -2.600 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_88" type="box" pos="1.950 -3.250 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_89" type="box" pos="2.600 3.250 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_90" type="box" pos="2.600 2.600 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_91" type="box" pos="2.600 1.950 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_92" type="box" pos="2.600 0.650 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_93" type="box" pos="2.600 -1.300 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_94" type="box" pos="2.600 -3.250 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_95" type="box" pos="3.250 3.250 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_96" type="box" pos="3.250 -3.250 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_97" type="box" pos="3.900 3.250 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_98" type="box" pos="3.900 -1.950 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_99" type="box" pos="3.900 -2.600 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_100" type="box" pos="3.900 -3.250 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_101" type="box" pos="4.550 3.250 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_102" type="box" pos="4.550 2.600 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_103" type="box" pos="4.550 0.000 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_104" type="box" pos="4.550 -0.650 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_105" type="box" pos="4.550 -1.950 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_106" type="box" pos="4.550 -3.250 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_107" type="box" pos="5.200 3.250 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_108" type="box" pos="5.200 -1.950 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_109" type="box" pos="5.200 -3.250 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_110" type="box" pos="5.850 3.250 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_111" type="box" pos="5.850 -0.650 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_112" type="box" pos="5.850 -1.950 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_113" type="box" pos="5.850 -3.250 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_114" type="box" pos="6.500 3.250 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_115" type="box" pos="6.500 1.950 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_116" type="box" pos="6.500 -1.300 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_117" type="box" pos="6.500 -1.950 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_118" type="box" pos="6.500 -3.250 0.100" size="0.350 0.025 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="maze_wall_rear_extension" type="box" pos="-0.325 -0.000 0.100" size="0.025 3.275 0.100" rgba="0.7 0.7 0.7 1.0"/>
+    <geom name="maze_wall_left_extension" type="box" pos="-0.000 3.250 0.100" size="0.350 0.025 0.100" rgba="0.7 0.7 0.7 1.0"/>
+    <geom name="maze_wall_right_extension" type="box" pos="0.000 -3.250 0.100" size="0.350 0.025 0.100" rgba="0.7 0.7 0.7 1.0"/>
+    <geom name="augm_maze_wall_0" type="box" pos="0.325 2.925 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_1" type="box" pos="0.325 1.625 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_2" type="box" pos="0.325 0.975 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_3" type="box" pos="0.325 0.325 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_4" type="box" pos="0.325 -0.325 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_5" type="box" pos="0.325 -0.975 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_6" type="box" pos="0.325 -1.625 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_7" type="box" pos="0.325 -2.275 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_8" type="box" pos="0.325 -2.925 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_9" type="box" pos="0.975 2.925 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_10" type="box" pos="0.975 1.625 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_11" type="box" pos="0.975 0.975 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_12" type="box" pos="0.975 -0.975 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_13" type="box" pos="0.975 -1.625 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_14" type="box" pos="0.975 -2.925 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_15" type="box" pos="1.625 2.275 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_16" type="box" pos="1.625 1.625 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_17" type="box" pos="1.625 0.325 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_18" type="box" pos="1.625 -0.325 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_19" type="box" pos="1.625 -1.625 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_20" type="box" pos="1.625 -2.275 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_21" type="box" pos="1.625 -2.925 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_22" type="box" pos="2.275 2.275 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_23" type="box" pos="2.275 1.625 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_24" type="box" pos="2.275 0.975 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_25" type="box" pos="2.275 0.325 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_26" type="box" pos="2.275 -0.975 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_27" type="box" pos="2.275 -2.275 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_28" type="box" pos="2.925 1.625 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_29" type="box" pos="2.925 0.325 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_30" type="box" pos="2.925 -0.975 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_31" type="box" pos="2.925 -2.275 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_32" type="box" pos="2.925 -2.925 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_33" type="box" pos="3.575 2.925 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_34" type="box" pos="3.575 2.275 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_35" type="box" pos="3.575 1.625 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_36" type="box" pos="3.575 0.975 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_37" type="box" pos="3.575 0.325 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_38" type="box" pos="3.575 -0.325 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_39" type="box" pos="3.575 -1.625 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_40" type="box" pos="4.225 2.925 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_41" type="box" pos="4.225 2.275 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_42" type="box" pos="4.225 1.625 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_43" type="box" pos="4.225 0.975 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_44" type="box" pos="4.225 -1.625 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_45" type="box" pos="4.225 -2.925 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_46" type="box" pos="4.875 2.275 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_47" type="box" pos="4.875 1.625 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_48" type="box" pos="4.875 0.975 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_49" type="box" pos="4.875 -0.325 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_50" type="box" pos="4.875 -0.975 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_51" type="box" pos="4.875 -1.625 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_52" type="box" pos="4.875 -2.925 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_53" type="box" pos="5.525 2.925 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_54" type="box" pos="5.525 2.275 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_55" type="box" pos="5.525 1.625 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_56" type="box" pos="5.525 0.325 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_57" type="box" pos="5.525 -0.325 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_58" type="box" pos="5.525 -1.625 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_59" type="box" pos="5.525 -2.275 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_60" type="box" pos="6.175 2.925 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_61" type="box" pos="6.175 1.625 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_62" type="box" pos="6.175 0.325 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_63" type="box" pos="6.175 -0.325 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_64" type="box" pos="6.175 -0.975 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_65" type="box" pos="6.175 -2.275 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_66" type="box" pos="6.825 2.925 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_67" type="box" pos="6.825 2.275 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_68" type="box" pos="6.825 0.975 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_69" type="box" pos="6.825 0.325 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_70" type="box" pos="6.825 -0.325 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_71" type="box" pos="6.825 -0.975 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_72" type="box" pos="6.825 -1.625 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_73" type="box" pos="6.825 -2.275 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_74" type="box" pos="6.825 -2.925 0.100" size="0.100 0.425 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_75" type="box" pos="0.650 3.250 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_76" type="box" pos="0.650 0.000 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_77" type="box" pos="0.650 -1.300 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_78" type="box" pos="0.650 -3.250 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_79" type="box" pos="1.300 3.250 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_80" type="box" pos="1.300 2.600 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_81" type="box" pos="1.300 1.950 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_82" type="box" pos="1.300 0.650 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_83" type="box" pos="1.300 -3.250 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_84" type="box" pos="1.950 3.250 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_85" type="box" pos="1.950 2.600 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_86" type="box" pos="1.950 -1.300 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_87" type="box" pos="1.950 -2.600 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_88" type="box" pos="1.950 -3.250 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_89" type="box" pos="2.600 3.250 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_90" type="box" pos="2.600 2.600 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_91" type="box" pos="2.600 1.950 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_92" type="box" pos="2.600 0.650 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_93" type="box" pos="2.600 -1.300 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_94" type="box" pos="2.600 -3.250 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_95" type="box" pos="3.250 3.250 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_96" type="box" pos="3.250 -3.250 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_97" type="box" pos="3.900 3.250 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_98" type="box" pos="3.900 -1.950 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_99" type="box" pos="3.900 -2.600 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_100" type="box" pos="3.900 -3.250 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_101" type="box" pos="4.550 3.250 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_102" type="box" pos="4.550 2.600 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_103" type="box" pos="4.550 0.000 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_104" type="box" pos="4.550 -0.650 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_105" type="box" pos="4.550 -1.950 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_106" type="box" pos="4.550 -3.250 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_107" type="box" pos="5.200 3.250 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_108" type="box" pos="5.200 -1.950 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_109" type="box" pos="5.200 -3.250 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_110" type="box" pos="5.850 3.250 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_111" type="box" pos="5.850 -0.650 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_112" type="box" pos="5.850 -1.950 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_113" type="box" pos="5.850 -3.250 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_114" type="box" pos="6.500 3.250 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_115" type="box" pos="6.500 1.950 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_116" type="box" pos="6.500 -1.300 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_117" type="box" pos="6.500 -1.950 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_118" type="box" pos="6.500 -3.250 0.100" size="0.425 0.100 0.100" rgba="0.7 0.5 0.7 1.0"/>
+    <geom name="augm_maze_wall_rear_extension" type="box" pos="-0.325 -0.000 0.100" size="0.100 3.350 0.100" rgba="0.7 0.7 0.7 1.0"/>
+    <geom name="augm_maze_wall_left_extension" type="box" pos="-0.000 3.250 0.100" size="0.425 0.100 0.100" rgba="0.7 0.7 0.7 1.0"/>
+    <geom name="augm_maze_wall_right_extension" type="box" pos="0.000 -3.250 0.100" size="0.425 0.100 0.100" rgba="0.7 0.7 0.7 1.0"/>
+  </worldbody>
+</mujoco>
