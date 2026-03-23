@@ -73,7 +73,7 @@ m = 1.0       # mass
 c = 0.4       # damping coefficient
 k = 2.0       # spring constant
 
-dt = 0.05     # sampling time
+dt = 0.01     # sampling time
 T = 50.0      # total simulation time
 N = int(T / dt)
 
