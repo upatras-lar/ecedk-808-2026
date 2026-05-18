@@ -2,8 +2,13 @@ For MyArm IK exercise:
 
 
 
-* You need pinocchio and meshcat libraries. Run:
+* You need qp\_solvers, pinocchio and meshcat libraries. Run:
 
+
+
+**pip3 install qp\_solvers**
+
+**pip3 install "qpsolvers\[proxqp]" (or any other solver you want)**
 
 **pip3 install pin**
 
@@ -46,6 +51,4 @@ and
 
 
 **python3 -m try\_position\_IK**
-
-
 
